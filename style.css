@@ -1,0 +1,342 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: red; /* Set the Netflix logo text to red */
+}
+
+.nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav ul li a {
+    color: white;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav ul li a:hover {
+    color: red;
+}
+
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+        url('static/images/bg.jpg') no-repeat center center/cover;
+    height: 80vh;
+    padding: 20px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.btn-start {
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-start:hover {
+    background-color: #e50914;
+}
+
+/* Movie Section */
+.movie-section {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.movie-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Ensure the movie cards are aligned horizontally and can scroll */
+.movie-grid {
+    display: flex; /* Use Flexbox for horizontal layout */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 15px; /* Space between movie cards */
+    padding: 0 10px;
+    scroll-snap-type: x mandatory; /* Smooth scrolling effect */
+    -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on mobile */
+}
+
+/* Individual Movie Card Style */
+.movie-card {
+    flex-shrink: 0; /* Prevent cards from shrinking */
+    width: 180px; /* Set a smaller fixed width for each movie card */
+    height: 280px; /* Set a smaller fixed height for each movie card */
+    background-color: #202020;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    scroll-snap-align: start; /* Snap to each card */
+}
+
+.movie-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.movie-card img {
+    width: 100%;
+    height: 180px; /* Set a smaller fixed height for images inside cards */
+    object-fit: cover;
+    border-bottom: 2px solid red; /* Bottom border for visual effect */
+}
+
+.movie-card h3 {
+    font-size: 14px;
+    margin: 10px 0;
+    color: white;
+}
+
+/* Hide the scrollbar for a cleaner look on desktop */
+.movie-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.movie-grid::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.movie-grid::-webkit-scrollbar-track {
+    background: #333;
+}
+
+/* Optional: Add responsiveness to ensure it works on smaller screens */
+@media (max-width: 768px) {
+    .movie-card {
+        width: 160px; /* Adjust the width of the cards on smaller screens */
+        height: 260px; /* Adjust the height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .movie-card {
+        width: 140px; /* Adjust the width even more for mobile screens */
+        height: 240px; /* Adjust the height for mobile screens */
+    }
+}
+
+
+
+/* Footer */
+.footer {
+    text-align: center;
+    background-color: black;
+    padding: 20px;
+    margin-top: 40px;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .hero-content p {
+        font-size: 16px;
+    }
+
+    .btn-start {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 24px;
+    }
+
+    .hero-content p {
+        font-size: 14px;
+    }
+
+    .btn-start {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+}
+/* Most Watched Section */
+.video-section {
+    padding: 40px 20px;
+    text-align: center;
+    color: white;
+}
+
+.video-section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Horizontal Scrolling Layout */
+.video-grid {
+    display: flex; /* Arrange video cards in a row */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 15px; /* Space between video cards */
+    padding: 10px; /* Add padding around the video cards */
+    scroll-snap-type: x mandatory; /* Enable snap scrolling */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on touch devices */
+}
+
+/* Styling for Video Cards */
+.video-card {
+    flex-shrink: 0; /* Prevent video cards from shrinking */
+    width: 180px; /* Set fixed width */
+    height: 220px; /* Set fixed height */
+    background-color: #202020;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease;
+    scroll-snap-align: start; /* Align cards at the start of the viewport */
+}
+
+.video-card:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+}
+
+.video-card video {
+    width: 100%;
+    height: 180px; /* Ensure all videos are the same height */
+    object-fit: cover; /* Cover the card space without distortion */
+    border-radius: 10px;
+}
+
+.video-card h3 {
+    font-size: 14px;
+    margin: 10px 0;
+    color: white;
+}
+
+/* Hide scrollbar for a cleaner look */
+.video-grid::-webkit-scrollbar {
+    height: 8px;
+}
+
+.video-grid::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 10px;
+}
+
+.video-grid::-webkit-scrollbar-track {
+    background: #333;
+}
+/* Input Page Styling */
+.main-content {
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay for readability */
+    border-radius: 10px;
+    width: 60%;
+    color: white;
+}
+
+.main-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: red;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.input-container label {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.input-container input {
+    padding: 10px;
+    width: 300px;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.input-container input::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+.input-container button {
+    padding: 10px 10px;
+    background-color: red;
+    border: none;
+    color: white;
+    font-size: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.input-container button:hover {
+    background-color: darkred;
+}
